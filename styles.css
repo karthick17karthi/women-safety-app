@@ -1,13 +1,98 @@
+/* Basic Styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
     text-align: center;
-    padding: 50px;
+    color: #333;
 }
-button {
-    font-size: 20px;
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
+
+/* Buttons */
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
+    text-align: center;
 }
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Alerts */
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.success {
+    background-color: #4CAF50;
+}
+
+/* Emergency Activation Section */
+.emergency-section {
+    text-align: center;
+    padding: 20px;
+    background: #ffcc00;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Location Sharing */
+.location {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
+

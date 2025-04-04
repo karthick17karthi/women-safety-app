@@ -4,13 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phoenix Safety Guardian</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #1f1f1f;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff4757;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .active {
+            color: #ff4757;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: #1b1b1b;
+            border-bottom: 5px solid #ff4757;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .sos-button {
+            background: #ff4757;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sos-button:hover {
+            background: #e84141;
+        }
+
+        /* Features Section */
+        .features {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .feature-item {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .feature-item i {
+            color: #ff4757;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Phoenix Guardian</h1>
-            <ul>
+        <nav class="navbar">
+            <h1 class="logo">Phoenix Guardian</h1>
+            <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Safety Tools</a></li>
                 <li><a href="#">Contacts</a></li>
@@ -23,20 +126,18 @@
         <section class="hero">
             <h2>Phoenix Safety Guardian</h2>
             <p>Empowering women across India with AI-powered safety features</p>
-            <button class="sos-button">SOS Alert</button>
+            <button class="sos-button"><i class="fas fa-exclamation-circle"></i> SOS Alert</button>
         </section>
         
         <section class="features">
             <h2>Safety Features</h2>
             <div class="feature-grid">
-                <div class="feature-item">SOS Alert</div>
-                <div class="feature-item">Trusted Contacts</div>
-                <div class="feature-item">Safe Routes</div>
-                <div class="feature-item">Stealth Mode</div>
+                <div class="feature-item"><i class="fas fa-shield-alt"></i> SOS Alert</div>
+                <div class="feature-item"><i class="fas fa-user-friends"></i> Trusted Contacts</div>
+                <div class="feature-item"><i class="fas fa-route"></i> Safe Routes</div>
+                <div class="feature-item"><i class="fas fa-eye-slash"></i> Stealth Mode</div>
             </div>
         </section>
     </main>
-    
-    <script src="app.js"></script>
 </body>
 </html>

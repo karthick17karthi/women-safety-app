@@ -12,8 +12,8 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: white;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
         }
 
         /* Navbar */
@@ -22,13 +22,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background: #1f1f1f;
+            background: #ff4b5c;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .logo {
             font-size: 24px;
-            font-weight: 600;
-            color: #ff4757;
+            font-weight: 700;
         }
 
         .nav-links {
@@ -40,42 +41,44 @@
         .nav-links a {
             text-decoration: none;
             color: white;
-            font-weight: 400;
+            font-weight: 500;
             transition: 0.3s;
         }
 
         .nav-links a:hover, .active {
-            color: #ff4757;
+            color: #ffd700;
         }
 
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px;
-            background: #1b1b1b;
-            border-bottom: 5px solid #ff4757;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            border-bottom: 5px solid #ffd700;
         }
 
         .hero h2 {
-            font-size: 36px;
-            font-weight: 600;
+            font-size: 40px;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
         .sos-button {
-            background: #ff4757;
+            background: #ffd700;
             border: none;
             padding: 15px 30px;
-            color: white;
+            color: black;
             font-size: 18px;
-            font-weight: 500;
-            border-radius: 8px;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
             transition: 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
 
         .sos-button:hover {
-            background: #e84141;
+            background: #ffdb58;
         }
 
         /* Features Section */
@@ -88,12 +91,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
         }
 
         .feature-item {
-            background: #1f1f1f;
+            background: #ff4b5c;
             padding: 20px;
             border-radius: 10px;
             font-size: 18px;
@@ -101,10 +104,17 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            background: #ff6b81;
         }
 
         .feature-item i {
-            color: #ff4757;
+            color: #ffd700;
             font-size: 24px;
         }
     </style>

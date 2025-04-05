@@ -1,124 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phoenix Safety Guardian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    /* Existing styles ... (unchanged) */
-
-    /* Add this new Contact section styling at the bottom of your <style> tag */
-    .contact-section {
-      background: #fff;
-      padding: 60px 20px;
-      color: #333;
-      text-align: center;
-    }
-
-    .contact-section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #ff4b5c;
-    }
-
-    .contact-section form {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .contact-section input,
-    .contact-section textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    .contact-section button {
-      background: #ff4b5c;
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-section button:hover {
-      background: #ff6b81;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: #ff4b5c;
-      color: white;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <h1 class="logo">Phoenix Guardian</h1>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Safety Tools</a></li>
-        <li><a href="#contact">Contacts</a></li>
-        <li><a href="#">Safe Routes</a></li>
-        <li><a href="#" class="login-button" onclick="document.getElementById('loginModal').style.display='flex'">Login</a></li>
-      </ul>
+    <h1><i class="fas fa-shield-alt" style="color:red;"></i> Phoenix Guardian</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Safety Tools</a>
+      <a href="#">Contacts</a>
+      <a href="#">Safe Routes</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Phoenix Safety Guardian</h2>
-      <p>Empowering women across India with AI-powered safety features</p>
-      <button class="sos-button"><i class="fas fa-exclamation-circle"></i> SOS Alert</button>
-    </section>
+  <section class="hero">
+    <h2>Phoenix Safety Guardian</h2>
+    <p>Empowering women across India with AI-powered safety features</p>
+    <button class="alert-btn" onclick="sendLocation()">
+      <i class="fas fa-exclamation-circle"></i>
+    </button>
+    <p id="locationResult"></p>
+  </section>
 
-    <section class="features">
-      <h2>Safety Features</h2>
-      <div class="feature-grid">
-        <div class="feature-item"><i class="fas fa-shield-alt"></i> SOS Alert</div>
-        <div class="feature-item"><i class="fas fa-user-friends"></i> Trusted Contacts</div>
-        <div class="feature-item"><i class="fas fa-route"></i> Safe Routes</div>
-        <div class="feature-item"><i class="fas fa-eye-slash"></i> Stealth Mode</div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Login Modal -->
-  <div class="login-modal" id="loginModal">
-    <div class="login-box">
-      <span class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
-      <h2>Login</h2>
-      <input type="text" placeholder="Email or Username">
-      <input type="password" placeholder="Password">
-      <button>Login</button>
+  <h2 class="section-title">Safety Features</h2>
+  <div class="features">
+    <div class="card">
+      <h3><i class="fas fa-shield-alt" style="color:#e63946;"></i><br>SOS Alert</h3>
+      <p>One-tap emergency alert system that sends your location to trusted contacts</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-user-check"></i><br>Trusted Contacts</h3>
+      <p>Add and manage your emergency contacts for quick access</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-map-marker-alt"></i><br>Safe Routes</h3>
+      <p>Get suggestions for safer routes based on real-time data</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-bell-slash"></i><br>Stealth Mode</h3>
+      <p>Activate distress signal discreetly without alerting others</p>
     </div>
   </div>
 
-  <footer class="footer">
-    &copy; 2025 Phoenix Safety Guardian. All rights reserved.
-  </footer>
+  <h2 class="section-title">How It Works</h2>
+  <div class="how-it-works">
+    <div class="card">
+      <h3>1</h3>
+      <h4>Set Up Your Profile</h4>
+      <p>Create your account and add emergency contacts</p>
+    </div>
+    <div class="card">
+      <h3>2</h3>
+      <h4>Enable Permissions</h4>
+      <p>Grant location access for accurate safety features</p>
+    </div>
+    <div class="card">
+      <h3>3</h3>
+      <h4>Stay Protected</h4>
+      <p>Use SOS or stealth mode in emergency situations</p>
+    </div>
+  </div>
+
+  <div class="help-section">
+    <div>
+      <h2>Need Immediate Help?</h2>
+      <p>Contact women helpline or emergency services</p>
+      <button onclick="window.location.href='tel:1090'">📞 Call 1090</button>
+      <button onclick="window.location.href='tel:112'" style="background:#edf2f4; color:#000">📞 Call 112</button>
+    </div>
+    <div>
+      <i class="fas fa-shield-alt" style="font-size:60px; opacity:0.2;"></i>
+    </div>
+  </div>
+
+  <script>
+    function sendLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const { latitude, longitude } = position.coords;
+          document.getElementById("locationResult").textContent = 
+            Location shared: (${latitude.toFixed(4)}, ${longitude.toFixed(4)});
+        }, () => {
+          alert("Location access denied.");
+        });
+      } else {
+        alert("Geolocation is not supported by your browser.");
+      }
+    }
+  </script>
 </body>
 </html>

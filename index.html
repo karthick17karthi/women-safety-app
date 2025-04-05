@@ -25,22 +25,32 @@
     <header>
       <h1><i class="fas fa-shield-alt" style="color:red;"></i> Phoenix Guardian</h1>
       <nav>
+        <a href="javascript:void(0)" onclick="goToLogin()">Login</a>
         <a href="#">Home</a>
         <a href="#">Safety Tools</a>
-        <a href="#" onclick="showContacts()">Contacts</a>
+        <a href="javascript:void(0)" onclick="showContacts()">Contacts</a>
         <a href="#">Safe Routes</a>
-        <a href="#" onclick="showLogin()"><i class="fas fa-user"></i> Login</a>
       </nav>
     </header>
 
     <section class="hero">
       <h2>Phoenix Safety Guardian</h2>
       <p>Empowering women across India with AI-powered safety features</p>
-      <button class="alert-btn" onclick="sendLocation()">
+      <button class="alert-btn blink" onclick="sendLocation()">
         <i class="fas fa-exclamation-circle"></i>
       </button>
       <p id="locationResult"></p>
     </section>
+
+    <div id="contact-list" style="display: none; text-align: center; margin: 20px;">
+      <h3>Emergency Contacts</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><b>Police:</b> <a href="tel:100">100</a></li>
+        <li><b>Women's Helpline:</b> <a href="tel:1091">1091</a></li>
+        <li><b>Emergency:</b> <a href="tel:112">112</a></li>
+        <li><b>Family:</b> <a href="tel:9876543210">9876543210</a></li>
+      </ul>
+    </div>
 
     <h2 class="section-title">Safety Features</h2>
     <div class="features">
@@ -92,14 +102,6 @@
         <i class="fas fa-shield-alt" style="font-size:60px; opacity:0.2;"></i>
       </div>
     </div>
-
-    <!-- Emergency Contacts List -->
-    <div id="contact-list" style="display: none; text-align:center; padding: 20px;">
-      <h3>Emergency Contacts</h3>
-      <p>👩 Priya: <a href="tel:9876543210">9876543210</a></p>
-      <p>👩 Sneha: <a href="tel:9876543222">9876543222</a></p>
-      <p>👩 Asha: <a href="tel:9876543233">9876543233</a></p>
-    </div>
   </div>
 
   <!-- JavaScript -->
@@ -138,7 +140,7 @@
       }
     }
 
-    function showLogin() {
+    function goToLogin() {
       document.getElementById("main-app").style.display = "none";
       document.getElementById("login-section").style.display = "block";
     }

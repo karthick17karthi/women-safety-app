@@ -1,234 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phoenix Safety Guardian</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phoenix Safety Guardian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Existing styles ... (unchanged) */
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: #ff4b5c;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+    /* Add this new Contact section styling at the bottom of your <style> tag */
+    .contact-section {
+      background: #fff;
+      padding: 60px 20px;
+      color: #333;
+      text-align: center;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-        }
+    .contact-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ff4b5c;
+    }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    .contact-section form {
+      max-width: 600px;
+      margin: auto;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
 
-        .nav-links a:hover, .active {
-            color: #ffd700;
-        }
+    .contact-section button {
+      background: #ff4b5c;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-        .login-button {
-            background: #ffd700;
-            color: black;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    .contact-section button:hover {
+      background: #ff6b81;
+    }
 
-        .login-button:hover {
-            background: #ffdb58;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
-            color: white;
-            border-bottom: 5px solid #ffd700;
-        }
-
-        .hero h2 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .sos-button {
-            background: #ffd700;
-            border: none;
-            padding: 15px 30px;
-            color: black;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .sos-button:hover {
-            background: #ffdb58;
-        }
-
-        /* Features Section */
-        .features {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .feature-item {
-            background: #ff4b5c;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: 0.3s;
-        }
-
-        .feature-item:hover {
-            background: #ff6b81;
-        }
-
-        .feature-item i {
-            color: #ffd700;
-            font-size: 24px;
-        }
-
-        /* Login Modal */
-        .login-modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .login-box {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            position: relative;
-        }
-
-        .login-box h2 {
-            margin-bottom: 20px;
-        }
-
-        .login-box input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .login-box button {
-            background: #ff4b5c;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .close-btn {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-    </style>
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #ff4b5c;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">Phoenix Guardian</h1>
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Safety Tools</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Safe Routes</a></li>
-                <li><a href="#" class="login-button" onclick="document.getElementById('loginModal').style.display='flex'">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Phoenix Guardian</h1>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Safety Tools</a></li>
+        <li><a href="#contact">Contacts</a></li>
+        <li><a href="#">Safe Routes</a></li>
+        <li><a href="#" class="login-button" onclick="document.getElementById('loginModal').style.display='flex'">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="hero">
-            <h2>Phoenix Safety Guardian</h2>
-            <p>Empowering women across India with AI-powered safety features</p>
-            <button class="sos-button"><i class="fas fa-exclamation-circle"></i> SOS Alert</button>
-        </section>
+  <main>
+    <section class="hero">
+      <h2>Phoenix Safety Guardian</h2>
+      <p>Empowering women across India with AI-powered safety features</p>
+      <button class="sos-button"><i class="fas fa-exclamation-circle"></i> SOS Alert</button>
+    </section>
 
-        <section class="features">
-            <h2>Safety Features</h2>
-            <div class="feature-grid">
-                <div class="feature-item"><i class="fas fa-shield-alt"></i> SOS Alert</div>
-                <div class="feature-item"><i class="fas fa-user-friends"></i> Trusted Contacts</div>
-                <div class="feature-item"><i class="fas fa-route"></i> Safe Routes</div>
-                <div class="feature-item"><i class="fas fa-eye-slash"></i> Stealth Mode</div>
-            </div>
-        </section>
-    </main>
+    <section class="features">
+      <h2>Safety Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fas fa-shield-alt"></i> SOS Alert</div>
+        <div class="feature-item"><i class="fas fa-user-friends"></i> Trusted Contacts</div>
+        <div class="feature-item"><i class="fas fa-route"></i> Safe Routes</div>
+        <div class="feature-item"><i class="fas fa-eye-slash"></i> Stealth Mode</div>
+      </div>
+    </section>
 
-    <!-- Login Modal -->
-    <div class="login-modal" id="loginModal">
-        <div class="login-box">
-            <span class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
-            <h2>Login</h2>
-            <input type="text" placeholder="Email or Username">
-            <input type="password" placeholder="Password">
-            <button>Login</button>
-        </div>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Login Modal -->
+  <div class="login-modal" id="loginModal">
+    <div class="login-box">
+      <span class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+      <h2>Login</h2>
+      <input type="text" placeholder="Email or Username">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
     </div>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 Phoenix Safety Guardian. All rights reserved.
+  </footer>
 </body>
 </html>
 

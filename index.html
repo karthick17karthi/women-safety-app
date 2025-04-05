@@ -1,90 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Phoenix Safety Guardian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1><i class="fas fa-shield-alt" style="color:red;"></i> Phoenix Guardian</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Safety Tools</a>
-      <a href="#">Contacts</a>
-      <a href="#">Safe Routes</a>
-    </nav>
-  </header>
+  <!-- Login Section -->
+  <div class="login-container" id="login-section" style="display: none;">
+    <h2>Login to Phoenix Guardian</h2>
+    <form onsubmit="return validateLogin()">
+      <input type="text" placeholder="Enter your name" id="name" required />
+      <input type="password" placeholder="Enter password" id="password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p>Only <span>women</span> can access the system</p>
+  </div>
 
-  <section class="hero">
-    <h2>Phoenix Safety Guardian</h2>
-    <p>Empowering women across India with AI-powered safety features</p>
-    <button class="alert-btn" onclick="sendLocation()">
-      <i class="fas fa-exclamation-circle"></i>
-    </button>
-    <p id="locationResult"></p>
-  </section>
+  <!-- Main App Section -->
+  <div id="main-app">
+    <header>
+      <h1><i class="fas fa-shield-alt" style="color:red;"></i> Phoenix Guardian</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Safety Tools</a>
+        <a href="#" onclick="showContacts()">Contacts</a>
+        <a href="#">Safe Routes</a>
+        <a href="#" onclick="showLogin()"><i class="fas fa-user"></i> Login</a>
+      </nav>
+    </header>
 
-  <h2 class="section-title">Safety Features</h2>
-  <div class="features">
-    <div class="card">
-      <h3><i class="fas fa-shield-alt" style="color:#e63946;"></i><br>SOS Alert</h3>
-      <p>One-tap emergency alert system that sends your location to trusted contacts</p>
+    <section class="hero">
+      <h2>Phoenix Safety Guardian</h2>
+      <p>Empowering women across India with AI-powered safety features</p>
+      <button class="alert-btn" onclick="sendLocation()">
+        <i class="fas fa-exclamation-circle"></i>
+      </button>
+      <p id="locationResult"></p>
+    </section>
+
+    <h2 class="section-title">Safety Features</h2>
+    <div class="features">
+      <div class="card">
+        <h3><i class="fas fa-shield-alt" style="color:#e63946;"></i><br>SOS Alert</h3>
+        <p>One-tap emergency alert system that sends your location to trusted contacts</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-user-check"></i><br>Trusted Contacts</h3>
+        <p>Add and manage your emergency contacts for quick access</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-map-marker-alt"></i><br>Safe Routes</h3>
+        <p>Get suggestions for safer routes based on real-time data</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-bell-slash"></i><br>Stealth Mode</h3>
+        <p>Activate distress signal discreetly without alerting others</p>
+      </div>
     </div>
-    <div class="card">
-      <h3><i class="fas fa-user-check"></i><br>Trusted Contacts</h3>
-      <p>Add and manage your emergency contacts for quick access</p>
+
+    <h2 class="section-title">How It Works</h2>
+    <div class="how-it-works">
+      <div class="card">
+        <h3>1</h3>
+        <h4>Set Up Your Profile</h4>
+        <p>Create your account and add emergency contacts</p>
+      </div>
+      <div class="card">
+        <h3>2</h3>
+        <h4>Enable Permissions</h4>
+        <p>Grant location access for accurate safety features</p>
+      </div>
+      <div class="card">
+        <h3>3</h3>
+        <h4>Stay Protected</h4>
+        <p>Use SOS or stealth mode in emergency situations</p>
+      </div>
     </div>
-    <div class="card">
-      <h3><i class="fas fa-map-marker-alt"></i><br>Safe Routes</h3>
-      <p>Get suggestions for safer routes based on real-time data</p>
+
+    <div class="help-section">
+      <div>
+        <h2>Need Immediate Help?</h2>
+        <p>Contact women helpline or emergency services</p>
+        <button onclick="window.location.href='tel:1090'">📞 Call 1090</button>
+        <button onclick="window.location.href='tel:112'" style="background:#edf2f4; color:#000">📞 Call 112</button>
+      </div>
+      <div>
+        <i class="fas fa-shield-alt" style="font-size:60px; opacity:0.2;"></i>
+      </div>
     </div>
-    <div class="card">
-      <h3><i class="fas fa-bell-slash"></i><br>Stealth Mode</h3>
-      <p>Activate distress signal discreetly without alerting others</p>
+
+    <!-- Emergency Contacts List -->
+    <div id="contact-list" style="display: none; text-align:center; padding: 20px;">
+      <h3>Emergency Contacts</h3>
+      <p>👩 Priya: <a href="tel:9876543210">9876543210</a></p>
+      <p>👩 Sneha: <a href="tel:9876543222">9876543222</a></p>
+      <p>👩 Asha: <a href="tel:9876543233">9876543233</a></p>
     </div>
   </div>
 
-  <h2 class="section-title">How It Works</h2>
-  <div class="how-it-works">
-    <div class="card">
-      <h3>1</h3>
-      <h4>Set Up Your Profile</h4>
-      <p>Create your account and add emergency contacts</p>
-    </div>
-    <div class="card">
-      <h3>2</h3>
-      <h4>Enable Permissions</h4>
-      <p>Grant location access for accurate safety features</p>
-    </div>
-    <div class="card">
-      <h3>3</h3>
-      <h4>Stay Protected</h4>
-      <p>Use SOS or stealth mode in emergency situations</p>
-    </div>
-  </div>
-
-  <div class="help-section">
-    <div>
-      <h2>Need Immediate Help?</h2>
-      <p>Contact women helpline or emergency services</p>
-      <button onclick="window.location.href='tel:1090'">📞 Call 1090</button>
-      <button onclick="window.location.href='tel:112'" style="background:#edf2f4; color:#000">📞 Call 112</button>
-    </div>
-    <div>
-      <i class="fas fa-shield-alt" style="font-size:60px; opacity:0.2;"></i>
-    </div>
-  </div>
-
+  <!-- JavaScript -->
   <script>
+    function validateLogin() {
+      const name = document.getElementById("name").value.toLowerCase();
+      const password = document.getElementById("password").value;
+
+      if (!name || !password) {
+        alert("Please fill all fields.");
+        return false;
+      }
+
+      const femaleNames = ["ananya", "priya", "sneha", "asha", "radha", "meena", "divya", "lakshmi"];
+      if (!femaleNames.includes(name)) {
+        alert("Access restricted. Only women can login.");
+        return false;
+      }
+
+      document.getElementById("login-section").style.display = "none";
+      document.getElementById("main-app").style.display = "block";
+      return false;
+    }
+
     function sendLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
           const { latitude, longitude } = position.coords;
-          document.getElementById("locationResult").textContent = 
+          document.getElementById("locationResult").textContent =
             Location shared: (${latitude.toFixed(4)}, ${longitude.toFixed(4)});
         }, () => {
           alert("Location access denied.");
@@ -92,6 +136,16 @@
       } else {
         alert("Geolocation is not supported by your browser.");
       }
+    }
+
+    function showLogin() {
+      document.getElementById("main-app").style.display = "none";
+      document.getElementById("login-section").style.display = "block";
+    }
+
+    function showContacts() {
+      const contactList = document.getElementById("contact-list");
+      contactList.style.display = contactList.style.display === "none" ? "block" : "none";
     }
   </script>
 </body>

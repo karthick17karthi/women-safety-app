@@ -48,13 +48,15 @@ nav a {
   color: white;
   font-size: 2rem;
   cursor: pointer;
-  animation: blink 1s infinite; /* Blinking effect */
+}
+
+.blink {
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .section-title {
@@ -156,11 +158,3 @@ nav a {
   color: #d62828;
   font-weight: bold;
 }
-
-#contact-list {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  width: 80%;
-  margin: 20px auto;
-  pa
